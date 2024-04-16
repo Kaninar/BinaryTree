@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cours_Task5_Tree.MainPage">
+    <Grid ColumnDefinitions="300, *"
+          RowDefinitions="750, 50, 50, 50, 50">
+        <Border Grid.Column="0"
+                Grid.Row="0"
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+            <ListView x:Name="ListNumbers" 
+                  ItemsSource="{Binding Numbers}"   
+                  Margin="0, 5, 0, 0">
+                <ListView.Header>
+                    <Label Text="Массив"
+                           HorizontalOptions="Center"
+                           FontSize="Micro"/>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding .}" 
+                                   HorizontalTextAlignment="Center"
+                                   FontSize="Medium"
+                                   WidthRequest="250"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+        <Grid ColumnDefinitions="16*, 16*, 16*, 16*, 16*, 16*"
+              RowDefinitions="60"
+              Grid.Column="0"
+              Grid.Row="1">
+            <Label Text="N:" 
+                   Grid.Column="0"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="EntryN"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextChanged="TextChanged"
+                   MaxLength="2"
+                   Completed="EntryN_Completed"/>
+            <Label Text="От:" 
+                   Grid.Column="2"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="EntryMin" Grid.Column="3"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextChanged="TextChanged"
+                   MaxLength="3"
+                   Completed="EntryMin_Completed"/>
+            <Label Text="До:"
+                   Grid.Column="4"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Entry x:Name="EntryMax" 
+                   Grid.Column="5"
+                   Grid.Row="0"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextChanged="TextChanged"
+                   MaxLength="3"
+                   Completed="EntryMax_Completed"/>
+        </Grid>
+        <Button x:Name="ButtonCreateArray" 
+                Grid.Column="0"
+                Grid.Row="2"
+                Text="Сгенерировать массив"
+                Clicked="ButtonCreateArray_Clicked"
+                TextColor="Black"
+                FontSize="Micro"
+                IsEnabled="False"/>
+        <Button x:Name="ButtonBuildTree" 
+                Grid.Column="0"
+                Grid.Row="3"
+                Text="Построить дерево"
+                Clicked="ButtonBuildTree_Clicked"
+                TextColor="Black"
+                FontSize="Micro"
+                IsEnabled="False"/>
+        <Border Grid.Column="1"
+                Grid.Row="0"
+                Grid.RowSpan="4"
+                StrokeShape="RoundRectangle 10,10,10,10">
+            <GraphicsView x:Name="Board"              
+                      WidthRequest="1100"
+                      HeightRequest="900"    
+                      HorizontalOptions="Center"/>
+        </Border>
+        <Label x:Name="LabelAnswer"
+               Grid.Row="4"
+               Grid.Column="0"
+               Grid.ColumnSpan="2"/>
+    </Grid>
+    
+</ContentPage>

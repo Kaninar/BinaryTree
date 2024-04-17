@@ -98,7 +98,10 @@
         <Label x:Name="LabelAnswer"
                Grid.Row="4"
                Grid.Column="0"
-               Grid.ColumnSpan="2"/>
+               Grid.ColumnSpan="2"
+               VerticalOptions="Center"
+               FontSize="Large"
+               Padding="10"/>
     </Grid>
     
 </ContentPage>

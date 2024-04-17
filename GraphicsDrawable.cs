@@ -84,12 +84,6 @@ namespace Cours_Task5_Tree
             }
 
             canvas.FillCircle(RootNodeCenter.X, RootNodeCenter.Y, _NodeRadius);
-
-            if (Left != null && Right != null)
-            {
-                canvas.StrokeColor = Colors.Orange;
-            }
-
             canvas.DrawCircle(RootNodeCenter.X, RootNodeCenter.Y, _NodeRadius);
             canvas.StrokeColor = _StrokeColor;
             canvas.DrawString(Root.Value.ToString(), RootNodeCenter.X-_NodeRadius, RootNodeCenter.Y-_NodeRadius, _NodeRadius*2, _NodeRadius*2 ,HorizontalAlignment.Center, VerticalAlignment.Center);

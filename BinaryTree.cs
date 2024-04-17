@@ -49,8 +49,7 @@ namespace Cours_Task5_Tree
             {
                 return;
             }
-            BinaryTreeNode? Left = parent.LeftChildNode;
-            BinaryTreeNode? Right = parent.RightChildNode;
+            
             if (child.Value > parent.Value)
             {
                 if (parent.RightChildNode == null)
@@ -77,6 +76,8 @@ namespace Cours_Task5_Tree
                     AddNode(parent.LeftChildNode, child);
                 }
             }
+            BinaryTreeNode Left = parent.LeftChildNode;
+            BinaryTreeNode Right = parent.RightChildNode;
             int LeftHeight = Left != null ? Left.Height : 0;
             int RightHeight = Right != null ? Right.Height : 0;
             parent.Height = Math.Max(LeftHeight, RightHeight) + 1;
